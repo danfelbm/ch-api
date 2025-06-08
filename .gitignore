@@ -1,119 +1,30 @@
-# Flutter/Dart
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-build/
-lib/generated_plugin_registrant.dart
-*.so
-*.dylib
-*.dll
-.fvm/
-
-# Flutter Web
-web/flutter_service_worker.js
-web/manifest.json
-
-# Flutter iOS
-ios/Runner.xcworkspace/
-ios/Runner.xcodeproj/
-ios/.symlinks/
-ios/Flutter/flutter_assets/
-ios/Flutter/flutter_export_environment.sh
-
-# Flutter Android
-android/app/debug
-android/app/profile
-android/app/release
-android/.gradle/
-android/captures/
-android/gradlew
-android/gradlew.bat
-android/local.properties
-android/**/GeneratedPluginRegistrant.java
-
-# OctoberCMS / PHP
-vendor/
-storage/logs/*
-storage/framework/cache/*
-storage/framework/sessions/*
-storage/framework/views/*
-storage/cms/cache/*
-storage/cms/combiner/*
-storage/cms/twig/*
-bootstrap/cache/*
-.env
-.env.local
-.env.*.local
-
-# Base de datos
-*.sqlite
-*.db
-
-# Node modules (si usas herramientas frontend)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Logs
-logs/
-*.log
-
-# Sistema operativo
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Archivos temporales
-*.tmp
-*.temp
-*.bak
-*.backup
-
-# Credenciales y configuración sensible
-config/app.php
-config/database.php
-config/mail.php
-.htaccess
-
-# Archivos con información confidencial
-roadmap.md
-
-# Uploads y archivos generados
-storage/app/uploads/*
-storage/temp/*
-public/storage
-
-# Composer
+# Common
 composer.phar
+.DS_Store
+.idea
+.env
+.env.*.php
+.env.php
+auth.json
+php_errors.log
+nginx-error.log
+nginx-access.log
+nginx-ssl.access.log
+nginx-ssl.error.log
+php-errors.log
+sftp-config.json
+.ftpconfig
+.vscode/
+selenium.php
 composer.lock
+package-lock.json
+/node_modules
+_ide_helper.php
+.phpunit.result.cache
+nbproject
+.phpstorm.meta.php
 
-# Flutter específico
-.metadata
-.flutter-plugins-dependencies
-ios/Pods/
-ios/Podfile.lock
-android/.gradle
-android/build/
-android/app/build/
-
-# Testing
-coverage/
-test_driver/screenshots/
-
-# Documentación generada
-docs/api/ 
+# Project
+/bootstrap/compiled.php
+/vendor
+/modules

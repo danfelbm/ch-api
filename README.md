@@ -1,86 +1,74 @@
-# Líderes App - Sistema de Gestión de Contactos CRM
+<p align="center">
+    <img src="https://github.com/octobercms/october/blob/develop/themes/demo/assets/images/favicon.png?raw=true" alt="October" width="25%" height="25%" />
+</p>
 
-Aplicación Flutter para gestión de contactos CRM con backend OctoberCMS e integración con Groundhogg WordPress CRM.
+[October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems. We feel building websites has become a convoluted and confusing process that leaves developers unsatisfied. We want to turn you around to the simpler side and get back to basics.
 
-## 📋 Descripción
+October's mission is to show the world that web development is not rocket science.
 
-Sistema modular de gestión de contactos que integra:
-- **Frontend Flutter**: Aplicación cross-platform (Android, iOS, Web)
-- **Backend OctoberCMS**: Infraestructura segura con plugins modulares
-- **Integración Groundhogg**: CRM principal de WordPress
-- **Autenticación OAuth**: Sistema seguro con InvisionCommunity v5
+[![Build Status](https://github.com/octobercms/library/actions/workflows/tests.yml/badge.svg)](https://octobercms.com/)
+[![Downloads](https://img.shields.io/packagist/dt/october/rain)](https://docs.octobercms.com/)
+[![Version](https://img.shields.io/packagist/v/october/october)](https://octobercms.com/changelog)
+[![License](https://poser.pugx.org/october/october/license.svg)](./LICENSE.md)
 
-## 🏗️ Arquitectura
+> *Please note*: October is open source but it is not free software. A license with a small fee is required for each website you build with October CMS.
 
-### Componentes Principales
+## Installing October
 
-#### 1. Plugin GlobalAPI (Infraestructura)
-```
-plugins/autor/globalapi/
-├── controllers/          # OAuth & Proxy controllers
-├── classes/             # Groundhogg & Invision services  
-├── middleware/          # Authentication middleware
-└── routes.php           # /api/auth/*, /api/groundhogg/*
-```
+Instructions on how to install October can be found at the [installation guide](https://docs.octobercms.com/3.x/setup/installation.html).
 
-#### 2. Aplicación Flutter
-```
-lideres_app/
-├── lib/features/auth/   # OAuth integration with GlobalAPI
-├── lib/services/        # HTTP client for GlobalAPI
-└── lib/features/contacts/ # UI consuming secure endpoints
-```
+### Quick Start Installation
 
-#### 3. Plugin LideresApp (Específico)
-```
-plugins/autor/lideresapp/
-├── models/              # Audit & Config models
-├── controllers/         # Audit endpoints
-└── routes.php           # /api/audit/*, /api/config/*
-```
+If you have composer installed, run this in your terminal to install October CMS from command line. This will place the files in a directory named **myoctober**.
 
-## 🚀 Estado del Desarrollo
+    composer create-project october/october myoctober
 
-**📊 PROGRESO GENERAL: 0% - Proyecto iniciado**
+If you plan on using a database, run this command inside the application directory.
 
-### Fases de Desarrollo:
+    php artisan october:install
 
-- **FASE 1**: Plugin GlobalAPI (Infraestructura) - 1-2 semanas ⏳
-- **FASE 2**: Aplicación Flutter - 2-3 semanas ⏳  
-- **FASE 3**: Plugin LideresApp (Auditoría) - 1-2 semanas ⏳
+## Learning October
 
-### Próximos Pasos:
-1. ✅ Repositorio Git inicializado
-2. 📋 Plugin GlobalAPI - Estructura base
-3. 📋 OAuth InvisionCommunity
-4. 📋 Proxy API Groundhogg
+The best place to learn October CMS is by [reading the documentation](https://docs.octobercms.com) or [following some tutorials](https://octobercms.com/support/articles/tutorials).
 
-## 🔧 Tecnologías
+You may also watch this [introductory video](https://www.youtube.com/watch?v=yLZTOeOS7wI). Make sure to check out our [official YouTube channel](https://www.youtube.com/c/OctoberCMSOfficial). There is also the excellent video series by [Watch & Learn](https://watch-learn.com/series/making-websites-with-october-cms).
 
-- **Flutter 3.16+** - Framework principal
-- **OctoberCMS 3.x** - Backend CMS
-- **Laravel/Eloquent** - ORM y framework base
-- **MySQL 8.0+** - Base de datos
-- **Groundhogg API** - CRM de WordPress
-- **InvisionCommunity OAuth** - Autenticación
+For code examples of building with October CMS, visit the [RainLab Plugin Suite](https://github.com/rainlab) or the [October Demos Repo](https://github.com/octoberdemos).
 
-## 📚 Documentación
+## Coding Standards
 
-- [`roadmap.md`](./roadmap.md) - Plan detallado de desarrollo
-- Documentación API: *En desarrollo*
-- Guías de instalación: *En desarrollo*
+Please follow the following guides and code standards:
 
-## 🔒 Seguridad
+* [PSR 4 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
+* [PSR 2 Coding Style Guide](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
+* [PSR 1 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
 
-- **Sin exposición de credenciales** en frontend
-- **OAuth robusto** manejado por backend
-- **Middleware de autenticación** obligatorio
-- **Rate limiting** y protección anti-abuso
+## Security Vulnerabilities
 
-## 📄 Licencia
+Please review [our security policy](https://github.com/octobercms/october/security/policy) on how to report security vulnerabilities.
 
-*Por definir*
+## Development Team
 
----
+October CMS was created by [Alexey Bobkov](https://www.linkedin.com/in/alexey-bobkov-232ba02b/) and [Samuel Georges](https://www.linkedin.com/in/samuel-georges-0a964131/), who both continue to develop the platform.
 
-**Nota**: Este proyecto está en desarrollo inicial. Para más detalles consultar el [roadmap completo](./roadmap.md). 
+## Foundation library
+
+The CMS uses [Laravel](https://laravel.com) as a foundation PHP framework.
+
+## Contact
+
+For announcements and updates:
+
+* [Contact Us Page](http://octoberdev.test/contact)
+* [Follow us on Twitter](https://twitter.com/octobercms)
+* [Like us on Facebook](https://facebook.com/octobercms)
+
+To chat or hang out:
+
+* [Join us on Slack](https://join.slack.com/t/octobercms/shared_invite/zt-2f19m689c-VCrBPc2P1dmqAJ_86Y8e_Q)
+* [Join us on Discord](https://discord.gg/gEKgwSZ)
+* [Join us on Telegram](https://t.me/octoberchat)
+
+## License
+
+The October CMS platform is licensed software, see [End User License Agreement](./LICENSE.md) (EULA) for more details.
