@@ -1,4 +1,7 @@
-/* Base Styles */
+//
+// Base Styles
+// --------------------------------------------------
+
 .pagination {
     display: flex;
     padding-left: 0;
@@ -37,7 +40,10 @@
     }
 }
 
-/* Custom Styles */
+//
+// Custom Styles
+// --------------------------------------------------
+
 .blog-pagination {
     display: inline-block;
     .oc-pagination {
@@ -65,35 +71,12 @@ ul.pagination {
             background: #fff;
         }
 
-        &.first, &.last {
-            > .page-link {
-                position: relative;
-                color: #fff;
-                width: 44px;
-
-                &:before {
-                    content: '';
-                    display: block;
-                    width: 15px;
-                    height: 12.5px;
-                    background: url('../../images/icons/icon-pagination-arrow.png') no-repeat 0 0;
-                    background-size: 15px 12.5px;
-                    position: absolute;
-                    top: 16px;
-                    left: 14px;
-                }
-            }
-
-            &.disabled > .page-link:before {
-                opacity: .5;
-            }
-        }
-
         &.first {
             > .page-link {
                 border-bottom-left-radius: 0.25rem;
                 border-top-left-radius: 0.25rem;
             }
+            .render-pagination-arrow();
 
             > .page-link:before {
                 transform: scaleX(-1);
@@ -105,6 +88,31 @@ ul.pagination {
                 border-bottom-right-radius: 0.25rem;
                 border-top-right-radius: 0.25rem;
             }
+            .render-pagination-arrow();
         }
+    }
+}
+
+.render-pagination-arrow() {
+    > .page-link {
+        position: relative;
+        color: #fff;
+        width: 44px;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 12.5px;
+            background: url('@{assets-url}/images/icons/icon-pagination-arrow.png') no-repeat 0 0;
+            background-size: 15px 12.5px;
+            position: absolute;
+            top: 16px;
+            left: 14px;
+        }
+    }
+
+    &.disabled > .page-link:before {
+        opacity: .5;
     }
 }

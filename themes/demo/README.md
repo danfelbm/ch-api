@@ -1,4 +1,5 @@
-# Demo Theme
+Demo Theme
+==========
 
 October CMS demo theme that demonstrates the basic core functionality and utilizes the accompanying demo plugin. It is a great theme to copy when building a site from scratch.
 
@@ -8,7 +9,7 @@ Have fun!
 
 ## Combining CSS and JavaScript
 
-This theme doesn't combine assets for performance reasons. To combine the stylesheets, replace the following lines in the default layout. When combining with this theme, we recommend enabling the config `enable_asset_deep_hashing` in the file **config/cms.php**.
+This theme doesn't combine assets for performance reasons. To combine the stylesheets, replace the following lines in the default layout. When combining with this theme, we recommend enabling the config `enableAssetDeepHashing` in the file **config/cms.php**.
 
 Uncombined stylesheets:
 
@@ -22,36 +23,31 @@ Combined stylesheets:
 ```twig
 <link href="{{ [
     '@framework.extras',
-    'assets/css/vendor.css',
-    'assets/css/theme.css'
+    'assets/less/vendor.less',
+    'assets/less/theme.less'
 ]|theme }}" rel="stylesheet">
 ```
 
-> **Note**: October CMS also includes a LESS (`.less`) or SCSS (`.scss`) compiler, if you prefer to use these extensions.
+> **Note**: October also includes an SCSS compiler, if you prefer.
 
 Uncombined JavaScript:
 
 ```twig
-{% framework extras %}
-<script src="{{ 'assets/js/controls/alert-dialog.js'|theme }}"></script>
-<script src="{{ 'assets/js/controls/password-dialog.js'|theme }}"></script>
-<script src="{{ 'assets/js/controls/gallery-slider.js'|theme }}"></script>
-<script src="{{ 'assets/js/controls/card-slider.js'|theme }}"></script>
-<script src="{{ 'assets/js/controls/quantity-input.js'|theme }}"></script>
-<script src="{{ 'assets/js/app.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+<script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+{% framework extras turbo %}
 ```
 
 Combined JavaScript:
 
 ```twig
 <script src="{{ [
+    '@jquery',
+    '@framework',
     '@framework.extras',
-    'assets/js/controls/alert-dialog.js',
-    'assets/js/controls/password-dialog.js',
-    'assets/js/controls/gallery-slider.js',
-    'assets/js/controls/card-slider.js',
-    'assets/js/controls/quantity-input.js',
-    'assets/js/app.js'
+    'assets/vendor/bootstrap.js',
+    'assets/javascript/app.js'
 ]|theme }}"></script>
 ```
 

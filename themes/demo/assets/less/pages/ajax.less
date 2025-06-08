@@ -1,5 +1,9 @@
+@import "../theme/boot";
+
 .page-ajax {
-    /* Calculator form */
+    //
+    // Calculator form
+    //
     .panel {
         border: none;
         overflow: hidden;
@@ -7,7 +11,7 @@
         margin-bottom: 27px;
         border-radius: 4px;
 
-        @media (min-width: 992px) {
+        @media (min-width: @screen-md-min) {
             .control-panel {
                 padding-right: 0!important;
             }
@@ -36,7 +40,7 @@
                     button {
                         width: 41px;
                         height: 41px;
-                        background: var(--bs-brand-accent);
+                        background: @brand-accent;
                     }
                 }
 
@@ -64,7 +68,7 @@
                             position: absolute;
                             width: 100%;
                             height: 100%;
-                            border-radius: var(--bs-border-radius);
+                            border-radius: @border-radius-base;
                             background: #ECF0F1;
                         }
 
@@ -72,7 +76,7 @@
                             display: none;
 
                             &:checked + span {
-                                background-color: var(--bs-brand-accent);
+                                background-color: @brand-accent;
                                 color: white;
                             }
                         }
@@ -80,7 +84,7 @@
                 }
             }
 
-            @media (max-width: 767px) {
+            @media (max-width: @screen-xs-max) {
                 .form-group {
                     display: block;
                     padding-right: 0;
@@ -107,7 +111,7 @@
     }
 
     #result {
-        background: var(--bs-brand-accent);
+        background: @brand-accent;
         color: white;
         font-size: 54px;
         padding: 0 15px;
@@ -134,18 +138,9 @@
             margin: 60px 0 20px;
         }
 
-        /* Decorations */
-        .explanation-decoration-1,
-        .explanation-decoration-2 {
-            content: '';
-            border-radius: 100%;
-            background-color: #F4F7F8;
-            display: block;
-            position: absolute;
-            z-index: -1;
-        }
-
+        // Decorations
         .explanation-decoration-1 {
+            .decoration-circle();
             background-color: #fff;
             width: 321px;
             height: 321px;
@@ -155,6 +150,7 @@
         }
 
         .explanation-decoration-2 {
+            .decoration-circle();
             background-color: #fff;
             width: 380px;
             height: 380px;

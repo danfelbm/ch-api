@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: @screen-md-min) {
     .navbar {
         .navbar-nav > li.nav-item {
             padding: 0 8px;
@@ -62,12 +62,12 @@
     }
 }
 
-/* Mobile Nav */
+// Mobile Nav
 .navbar-mobile {
     display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: @screen-sm-max) {
     .navbar-mobile {
         display: block;
 

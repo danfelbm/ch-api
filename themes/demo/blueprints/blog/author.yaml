@@ -4,10 +4,6 @@ type: entry
 name: Author
 drafts: false
 
-defaultSort:
-    column: title
-    direction: desc
-
 customMessages:
     buttonCreate: New Author
 

@@ -1,4 +1,9 @@
-/* Default Layout (All pages) */
+@import "../theme/boot";
+
+//
+// Default Layout (All pages)
+//
+
 #layout-header {
     &, &.navbar {
         background: linear-gradient(102.01deg, #DB6A26 0.3%, #DBB326 106.31%);
@@ -36,7 +41,7 @@
     overflow: hidden;
     height: 150px;
 
-    /* Decorations */
+    // Decorations
     .navbar-decorations {
         position: absolute;
         z-index: 1;
@@ -46,17 +51,8 @@
         right: 0;
     }
 
-    .navbar-decoration-1,
-    .navbar-decoration-2 {
-        content: '';
-        border-radius: 100%;
-        background-color: #F4F7F8;
-        display: block;
-        position: absolute;
-        z-index: -1;
-    }
-
     .navbar-decoration-1 {
+        .decoration-circle();
         width: 524px;
         height: 524px;
         left: -105px;
@@ -65,6 +61,7 @@
     }
 
     .navbar-decoration-2 {
+        .decoration-circle();
         width: 524px;
         height: 524px;
         left: 548px;
@@ -99,7 +96,7 @@ ul.list-with-ticks {
             display: block;
             width: 15px;
             height: 15px;
-            background: url('../../images/icons/icon-tick.png') no-repeat 0 0;
+            background: url('@{assets-url}/images/icons/icon-tick.png') no-repeat 0 0;
             background-size: 15px 15px;
             position: absolute;
             left: 0;

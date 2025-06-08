@@ -115,6 +115,12 @@ class GestorContactos {
 - **Documentación**: README y ayuda en español
 - **Retroalimentación**: Mensajes informativos durante operaciones
 
+### Sub-Roadmaps Detallados
+- **[roadmap-v1.md](roadmap-v1.md)**: Plugin GlobalAPI (Infraestructura) - Desarrollo completo OctoberCMS
+- **roadmap-v2.md**: Aplicación Flutter (Cliente móvil) - UI/UX y lógica de negocio *(pendiente)*
+- **roadmap-v3.md**: Plugin LideresApp (Auditoría) - Sistema de auditoría y reportes *(pendiente)*
+- **roadmap-v4.md**: Integración y Testing - Pruebas de integración completa *(pendiente)*
+
 ### Tabla de Características y Progreso
 
 | Versión | Característica | Descripción | Estado | Tiempo Est. | Notas |
