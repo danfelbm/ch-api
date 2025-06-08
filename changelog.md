@@ -9,7 +9,12 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/lang/es/).
 ## [Sin liberar]
 
 ### Agregado
-- Archivo de changelog para documentar modificaciones
+- **OctoberCMS**: Instalación completa en directorio `globalapi/`
+- **Base de datos**: Configuración y migración exitosa (lideresapp)
+- **Estructura de plugins**: Directorio preparado para desarrollo de plugins
+
+### Completado
+- **Tarea 1.0.1**: Estructura Plugin GlobalAPI ✅
 
 ## [0.0.1] - 2024-06-08
 
