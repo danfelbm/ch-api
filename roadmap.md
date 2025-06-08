@@ -361,11 +361,208 @@ class GestorContactos {
 - **Próximo Hito**: Setup básico del proyecto
 
 ## Información del Proyecto
-- **Nombre**: Aplicación de Gestión de Contactos CRM
+- **Nombre**: Aplicación de Gestión de Contactos CRM (CH-API)
 - **Tipo**: Aplicación Flutter con backend OctoberCMS + integración Groundhogg
 - **Versión Objetivo**: 1.0 MVP
 - **Progreso**: 0% - Iniciando desarrollo
 - **Arquitectura**: Flutter + OctoberCMS + MySQL + Groundhogg API
+
+## 📦 Información del Repositorio GitHub
+
+### **Configuración del Repositorio**
+- **URL**: https://github.com/danfelbm/ch-api
+- **Nombre**: `ch-api`
+- **Descripción**: "api y servicios para colombia humana"
+- **Visibilidad**: Privado 🔒
+- **Propietario**: danfelbm
+- **Rama principal**: `main`
+
+### **Configuración Git Local**
+- **Usuario**: `danfelbm`
+- **Email**: `danfelbm@gmail.com`
+- **Remote origin**: `https://github.com/danfelbm/ch-api.git`
+- **Directorio local**: `/Users/testuser/Herd/lideresapp`
+
+### **Estado Actual del Repositorio**
+- ✅ Repositorio inicializado y configurado
+- ✅ Commit inicial realizado en español
+- ✅ GitHub CLI configurado y autenticado
+- ✅ Remote origin configurado correctamente
+- ✅ Archivos base subidos (README.md, roadmap.md, .gitignore)
+
+### **Comandos Git Útiles (Español)**
+
+#### **Comandos Básicos Diarios**
+```bash
+# Ver estado actual
+git status
+
+# Agregar archivos al staging
+git add .                    # Todos los archivos
+git add archivo.dart         # Archivo específico
+git add carpeta/             # Carpeta específica
+
+# Hacer commit en español
+git commit -m "Descripción del cambio en español"
+git commit -m "feat: Agregar nueva funcionalidad"
+git commit -m "fix: Corregir error en autenticación"
+git commit -m "docs: Actualizar documentación del API"
+
+# Subir cambios al repositorio
+git push origin main
+
+# Descargar cambios del repositorio
+git pull origin main
+
+# Ver historial de commits
+git log --oneline
+git log --graph --oneline --all
+```
+
+#### **Comandos para Ramas (Branches)**
+```bash
+# Ver ramas disponibles
+git branch
+
+# Crear nueva rama
+git checkout -b feature/nueva-funcionalidad
+git checkout -b hotfix/correccion-urgente
+
+# Cambiar entre ramas
+git checkout main
+git checkout feature/nueva-funcionalidad
+
+# Fusionar rama a main
+git checkout main
+git merge feature/nueva-funcionalidad
+
+# Eliminar rama después de fusionar
+git branch -d feature/nueva-funcionalidad
+```
+
+#### **Comandos GitHub CLI**
+```bash
+# Ver información del repositorio
+gh repo view
+
+# Ver issues
+gh issue list
+
+# Crear nuevo issue
+gh issue create --title "Título en español" --body "Descripción del problema"
+
+# Ver pull requests
+gh pr list
+
+# Crear pull request
+gh pr create --title "Título del PR" --body "Descripción de los cambios"
+```
+
+### **Convenciones de Commits (Español)**
+
+#### **Tipos de Commits**
+- `feat:` - Nueva funcionalidad
+- `fix:` - Corrección de errores
+- `docs:` - Cambios en documentación
+- `style:` - Cambios de formato, espacios, etc.
+- `refactor:` - Refactorización de código
+- `test:` - Agregar o modificar tests
+- `chore:` - Tareas de mantenimiento
+
+#### **Ejemplos de Mensajes**
+```bash
+git commit -m "feat: Implementar autenticación OAuth con InvisionCommunity"
+git commit -m "fix: Corregir error en validación de tokens"
+git commit -m "docs: Actualizar roadmap con información de GitHub"
+git commit -m "refactor: Reorganizar estructura de carpetas del plugin"
+git commit -m "test: Agregar pruebas unitarias para servicio de contactos"
+git commit -m "chore: Actualizar dependencias de Flutter"
+```
+
+### **Estructura de Ramas Recomendada**
+
+#### **Ramas Principales**
+- `main` - Código de producción estable
+- `develop` - Rama de desarrollo principal
+
+#### **Ramas de Funcionalidades**
+- `feature/globalapi-setup` - Setup inicial del plugin GlobalAPI
+- `feature/oauth-invision` - Implementación OAuth InvisionCommunity
+- `feature/groundhogg-proxy` - Proxy API para Groundhogg
+- `feature/flutter-ui` - Desarrollo de interfaz Flutter
+- `feature/audit-system` - Sistema de auditoría
+
+#### **Ramas de Corrección**
+- `hotfix/auth-bug` - Correcciones urgentes
+- `bugfix/api-timeout` - Correcciones no urgentes
+
+### **Flujo de Trabajo Recomendado**
+
+#### **Para Nuevas Funcionalidades**
+```bash
+# 1. Actualizar main
+git checkout main
+git pull origin main
+
+# 2. Crear rama de funcionalidad
+git checkout -b feature/nombre-funcionalidad
+
+# 3. Desarrollar y hacer commits
+git add .
+git commit -m "feat: Implementar nueva funcionalidad"
+
+# 4. Subir rama
+git push origin feature/nombre-funcionalidad
+
+# 5. Crear Pull Request en GitHub
+gh pr create --title "feat: Nueva funcionalidad" --body "Descripción detallada"
+
+# 6. Después de aprobación, fusionar
+git checkout main
+git pull origin main
+git merge feature/nombre-funcionalidad
+git push origin main
+
+# 7. Limpiar rama
+git branch -d feature/nombre-funcionalidad
+```
+
+### **Archivos Importantes del Repositorio**
+
+#### **Archivos de Configuración**
+- `.gitignore` - Archivos a ignorar (Flutter, PHP, OctoberCMS)
+- `README.md` - Documentación principal del proyecto
+- `roadmap.md` - Plan detallado de desarrollo (este archivo)
+
+#### **Archivos Futuros Planeados**
+- `lideres_app/pubspec.yaml` - Dependencias Flutter
+- `backend/plugins/autor/globalapi/plugin.yaml` - Config plugin infraestructura
+- `backend/plugins/autor/lideresapp/plugin.yaml` - Config plugin específico
+- `backend/.env` - Variables de entorno (no versionado)
+- `docs/api.md` - Documentación de endpoints API
+
+### **Colaboración y Seguridad**
+
+#### **Configuración de Colaboradores**
+- Repositorio privado - Solo acceso autorizado
+- Invitar colaboradores: `gh repo edit --add-collaborator username`
+- Configurar protección de rama main
+- Requerir pull requests para cambios importantes
+
+#### **Manejo de Credenciales**
+- **NUNCA** subir archivos `.env` al repositorio
+- Usar GitHub Secrets para CI/CD
+- Credenciales de API en variables de entorno
+- Configurar `.gitignore` para excluir archivos sensibles
+
+### **Integración Continua (Futuro)**
+
+#### **GitHub Actions Planeadas**
+- Tests automáticos en Pull Requests
+- Deploy automático a staging
+- Validación de código Flutter
+- Tests de seguridad para plugins PHP
+- Generación automática de documentación
 
 ## Resources y Referencias
 
