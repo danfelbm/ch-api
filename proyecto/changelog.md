@@ -21,6 +21,12 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/lang/es/).
 - **RewriteBase**: Eliminado del .htaccess (ya no es subdirectorio)
 - **Caché**: Limpiada para aplicar cambios
 
+### Corregido
+- **.gitignore**: Restaurado configuración específica para Flutter + OctoberCMS + archivos sensibles
+- **Protección proyecto/roadmap.md**: Re-agregado al .gitignore por seguridad
+- **Configuración OctoberCMS**: Restauradas exclusiones de storage, cache y vendor
+- **Configuración Flutter**: Agregadas exclusiones específicas para desarrollo móvil
+
 ### Completado
 - **Tarea 1.0.1**: Estructura Plugin GlobalAPI ✅
 

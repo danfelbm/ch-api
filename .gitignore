@@ -1,30 +1,161 @@
-# Common
-composer.phar
-.DS_Store
-.idea
-.env
-.env.*.php
-.env.php
-auth.json
-php_errors.log
-nginx-error.log
-nginx-access.log
-nginx-ssl.access.log
-nginx-ssl.error.log
-php-errors.log
-sftp-config.json
-.ftpconfig
-.vscode/
-selenium.php
-composer.lock
-package-lock.json
-/node_modules
-_ide_helper.php
-.phpunit.result.cache
-nbproject
-.phpstorm.meta.php
+# ==========================================
+# CH-API - GitIgnore Configuration
+# Flutter + OctoberCMS + Sensitive Files
+# ==========================================
 
-# Project
-/bootstrap/compiled.php
+# ==========================================
+# SENSITIVE PROJECT FILES (SECURITY)
+# ==========================================
+# Documentación del proyecto (contiene credenciales)
+proyecto/roadmap.md
+# Archivos de configuración con credenciales
+.env
+.env.*
+auth.json
+# Logs que pueden contener información sensible
+*.log
+*-error.log
+*-access.log
+
+# ==========================================
+# FLUTTER SPECIFIC
+# ==========================================
+# Files and directories created by pub
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# Flutter/Dart/Pub generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code related
+.vscode/
+
+# Android related
+android/app/debug
+android/app/profile
+android/app/release
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+
+# iOS related
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Web related
+web/flutter_service_worker.js
+coverage/
+lib/generated_plugin_registrant.dart
+
+# Windows related
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.h
+
+# macOS related
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Linux related
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+
+# ==========================================
+# OCTOBER CMS SPECIFIC
+# ==========================================
+# Vendor directory
 /vendor
 /modules
+/node_modules
+
+# Compiled files
+/bootstrap/compiled.php
+composer.lock
+package-lock.json
+
+# Storage directories
+/storage/cms/cache/*
+/storage/cms/combiner/*
+/storage/cms/twig/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/storage/temp/*
+!/storage/cms/cache/.gitkeep
+!/storage/cms/combiner/.gitkeep
+!/storage/cms/twig/.gitkeep
+!/storage/framework/cache/.gitkeep
+!/storage/framework/sessions/.gitkeep
+!/storage/framework/views/.gitkeep
+!/storage/logs/.gitkeep
+!/storage/temp/.gitkeep
+
+# ==========================================
+# PHP SPECIFIC
+# ==========================================
+composer.phar
+php_errors.log
+.phpunit.result.cache
+_ide_helper.php
+.phpstorm.meta.php
+
+# ==========================================
+# DEVELOPMENT TOOLS
+# ==========================================
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# FTP/SFTP configuration
+sftp-config.json
+.ftpconfig
+
+# Test files
+selenium.php
+nbproject/
+
+# ==========================================
+# PROJECT SPECIFIC
+# ==========================================
+# Directorios de build
+/public/build/
+/public/hot
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Backups
+*.bak
+*.backup
