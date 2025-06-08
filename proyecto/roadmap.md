@@ -121,7 +121,7 @@ class GestorContactos {
 |---------|---------------|-------------|--------|-------------|-------|
 | **1.0** | **PLUGIN GLOBALAPI (INFRAESTRUCTURA)** | | | **1-2 semanas** | |
 | 1.0.1 | Estructura Plugin GlobalAPI | Setup plugin OctoberCMS, configuración base | ✅ | 1 día | Plugin de infraestructura |
-| 1.0.2 | Configuración Credenciales | Sistema seguro para API keys Groundhogg/Invision | 📋 | 1 día | Credential management |
+| 1.0.2 | Configuración Credenciales | Sistema seguro para API keys Groundhogg/Invision | 🔄 | 1 día | Credential management |
 | 1.0.3 | OAuth InvisionCommunity | Implementar flujo OAuth completo con Invision | 📋 | 3 días | Authentication system |
 | 1.0.4 | Middleware Autenticación | Validación de sesiones y tokens de usuario | 📋 | 2 días | Security middleware |
 | 1.0.5 | Proxy API Groundhogg | Endpoints seguros para operaciones Groundhogg | 📋 | 2 días | Secure proxy layer |
@@ -393,6 +393,36 @@ class GestorContactos {
 - [Flutter HTTP Package](https://pub.dev/packages/http) - Cliente HTTP
 - [OctoberCMS Documentation](https://docs.octobercms.com/3.x/) - Documentación oficial del CMS
 - [Laravel Documentation](https://laravel.com/docs/10.x) - Framework base de OctoberCMS
+
+### Herramientas de Desarrollo OctoberCMS
+
+#### **🛠️ Playground OctoberCMS (Blueprint para Plugins)**
+- **Ruta**: `/Users/testuser/Herd/lideresapp/plugins/october/test`
+- **Propósito**: Plugin de prueba y desarrollo que sirve como blueprint para muchos desarrollos en OctoberCMS
+- **Utilidad**: Contiene ejemplos de estructura, componentes, modelos y controladores
+- **Uso recomendado**: Consultar este plugin como referencia durante el desarrollo de GlobalAPI y LideresApp
+- **Contenido**:
+  - Estructura estándar de plugins OctoberCMS
+  - Ejemplos de componentes, modelos, controladores
+  - Configuraciones de rutas y permisos
+  - Patrones de desarrollo recomendados
+  - Testing y documentación de plugins
+
+#### **📋 Comandos útiles para Plugin Development**
+```bash
+# Explorar estructura del playground
+cd /Users/testuser/Herd/lideresapp/plugins/october/test
+ls -la
+
+# Copiar estructura base para nuevos plugins
+cp -r plugins/october/test plugins/autor/globalapi
+
+# Generar esqueleto de plugin
+php artisan create:plugin Autor.PluginName
+
+# Refrescar plugins durante desarrollo
+php artisan plugin:refresh Autor.GlobalAPI --force
+```
 
 ### Configuración APIs - Colombia Humana
 
