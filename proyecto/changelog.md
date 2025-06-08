@@ -13,6 +13,7 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/lang/es/).
 - **Base de datos**: Configuración y migración exitosa (lideresapp)
 - **Estructura de plugins**: Directorio preparado para desarrollo de plugins
 - **Documentación**: Movida a carpeta `proyecto/` (changelog.md, readme.md, roadmap.md)
+- **Playground OctoberCMS**: Documentado ruta del plugin de prueba para facilitar desarrollo
 
 ### Reorganizado
 - **Estructura**: OctoberCMS movido de `/globalapi/` a la raíz del proyecto
