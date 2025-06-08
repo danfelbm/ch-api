@@ -13,6 +13,12 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/lang/es/).
 - **Base de datos**: Configuración y migración exitosa (lideresapp)
 - **Estructura de plugins**: Directorio preparado para desarrollo de plugins
 
+### Corregido
+- **URLs de subdirectorio**: Configurado RewriteBase en .htaccess para `/globalapi/`
+- **ASSET_URL**: Agregado al .env para rutas correctas de assets
+- **Caché**: Limpiada caché de aplicación, rutas y vistas
+- **404 Errors**: Solucionados errores de recursos no encontrados
+
 ### Completado
 - **Tarea 1.0.1**: Estructura Plugin GlobalAPI ✅
 
