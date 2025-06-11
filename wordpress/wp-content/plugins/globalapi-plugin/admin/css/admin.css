@@ -1,0 +1,524 @@
+/**
+ * Estilos CSS para el panel de administración de GlobalAPI
+ *
+ * @package GlobalAPI
+ * @since   2.0.0
+ */
+
+/* =================================
+   ESTILOS GENERALES
+   ================================= */
+
+.globalapi-admin {
+    max-width: 1200px;
+}
+
+.globalapi-form .form-table th {
+    width: 200px;
+    font-weight: 600;
+}
+
+.globalapi-form .form-table td {
+    vertical-align: top;
+    padding-top: 15px;
+}
+
+.globalapi-form .description {
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+}
+
+/* =================================
+   INDICADORES DE ESTADO
+   ================================= */
+
+.status-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-expired {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-testing {
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #99d6ff;
+}
+
+/* =================================
+   BOTONES Y ACCIONES
+   ================================= */
+
+.globalapi-actions {
+    margin: 20px 0;
+}
+
+.globalapi-actions .button {
+    margin-right: 10px;
+}
+
+.button.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =================================
+   FORMULARIOS
+   ================================= */
+
+.globalapi-metabox {
+    margin-bottom: 20px;
+}
+
+.globalapi-metabox h3 {
+    margin: 0 0 15px 0;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-left: 4px solid #0073aa;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.globalapi-metabox .inside {
+    padding: 15px;
+}
+
+.toggle-password {
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.field-group {
+    margin-bottom: 20px;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* =================================
+   TABLAS DE LISTA
+   ================================= */
+
+.wp-list-table .column-acciones {
+    width: 120px;
+}
+
+.wp-list-table .column-estado {
+    width: 100px;
+}
+
+.wp-list-table .column-fecha_creacion {
+    width: 120px;
+}
+
+.wp-list-table .test-credencial,
+.wp-list-table .export-credencial {
+    margin-right: 5px;
+}
+
+.wp-list-table .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* =================================
+   NOTIFICACIONES
+   ================================= */
+
+.globalapi-notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid #0073aa;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.globalapi-notice.success {
+    border-left-color: #46b450;
+    background-color: #f7ffef;
+}
+
+.globalapi-notice.error {
+    border-left-color: #dc3232;
+    background-color: #ffefef;
+}
+
+.globalapi-notice.warning {
+    border-left-color: #ffb900;
+    background-color: #fff8e5;
+}
+
+/* =================================
+   DASHBOARD WIDGETS
+   ================================= */
+
+.globalapi-widget-estado {
+    font-size: 13px;
+}
+
+.globalapi-widget-estado .estado-general {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.globalapi-widget-estado .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.estadisticas-rapidas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.stat-item .numero {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0073aa;
+    line-height: 1;
+}
+
+.stat-item .etiqueta {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* =================================
+   LOGS
+   ================================= */
+
+.logs-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.log-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    transition: background-color 0.2s;
+}
+
+.log-item:hover {
+    background-color: #f9f9f9;
+}
+
+.log-item:last-child {
+    border-bottom: none;
+}
+
+.log-content .log-mensaje {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.log-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #999;
+}
+
+.log-severidad {
+    padding: 2px 6px;
+    border-radius: 2px;
+    background: #f0f0f0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* =================================
+   CONFIGURACIÓN
+   ================================= */
+
+.globalapi-config-section {
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.globalapi-config-section h3 {
+    margin: 0;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccd0d4;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.globalapi-config-section .form-table {
+    margin: 0;
+}
+
+.globalapi-config-section .form-table th,
+.globalapi-config-section .form-table td {
+    padding: 15px 20px;
+}
+
+/* =================================
+   ESTADO DEL SISTEMA
+   ================================= */
+
+.system-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.status-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.status-card h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #23282d;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.status-value.ok {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.status-value.error {
+    color: #dc3232;
+    font-weight: 600;
+}
+
+.status-value.warning {
+    color: #ffb900;
+    font-weight: 600;
+}
+
+/* =================================
+   RESPONSIVE
+   ================================= */
+
+@media screen and (max-width: 782px) {
+    .estadisticas-rapidas {
+        grid-template-columns: 1fr;
+    }
+    
+    .system-status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .globalapi-form .form-table th,
+    .globalapi-form .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .globalapi-form .form-table th {
+        border-bottom: none;
+    }
+    
+    .wp-list-table .column-acciones {
+        width: auto;
+    }
+}
+
+/* =================================
+   UTILIDADES
+   ================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* =================================
+   TOOLTIPS
+   ================================= */
+
+.globalapi-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.globalapi-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: #23282d;
+    color: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.globalapi-tooltip:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #23282d;
+    z-index: 1000;
+}
+
+/* =================================
+   ACCORDION
+   ================================= */
+
+.globalapi-accordion {
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.globalapi-accordion-header {
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccd0d4;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.globalapi-accordion-header:hover {
+    background: #f0f0f0;
+}
+
+.globalapi-accordion-content {
+    padding: 20px;
+    display: none;
+}
+
+.globalapi-accordion.active .globalapi-accordion-content {
+    display: block;
+}
+
+.globalapi-accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.globalapi-accordion.active .globalapi-accordion-icon {
+    transform: rotate(180deg);
+} 

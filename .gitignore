@@ -1,7 +1,13 @@
 # ==========================================
 # CH-API - GitIgnore Configuration
-# Flutter + OctoberCMS + Sensitive Files
+# Flutter + WordPress Plugin + Sensitive Files
 # ==========================================
+
+# ==========================================
+# ARCHIVED OCTOBERCMS CODE
+# ==========================================
+# Código anterior de OctoberCMS (archivado)
+octobercms/
 
 # ==========================================
 # SENSITIVE PROJECT FILES (SECURITY)

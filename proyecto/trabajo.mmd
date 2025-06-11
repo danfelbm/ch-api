@@ -1,0 +1,47 @@
+flowchart TD
+    A[🚀 INICIO DE TRABAJO] --> B[📋 Consultar proyecto/roadmap.md]
+    
+    B --> C[🔍 Buscar 'Sub-Roadmaps Detallados']
+    
+    C --> D{🎯 ¿En qué etapa estamos?}
+    
+    D -->|Plugin WordPress| E1[📖 Abrir proyecto/roadmap-v1.md<br/>GlobalAPI Infraestructura]
+    D -->|App Flutter| E2[📖 Abrir proyecto/roadmap-v2.md<br/>Cliente móvil<br/>⚠️ pendiente]
+    D -->|Plugin Auditoría| E3[📖 Abrir proyecto/roadmap-v3.md<br/>Sistema auditoría<br/>⚠️ pendiente]
+    D -->|Testing Integral| E4[📖 Abrir proyecto/roadmap-v4.md<br/>Pruebas integración<br/>⚠️ pendiente]
+    
+    E1 --> F[🔄 Identificar próxima tarea]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    
+    F --> G[⚡ Ejecutar tarea específica]
+    
+    G --> H[📝 Actualizar proyecto/changelog.md<br/>📅 Fecha + descripción detallada]
+    
+    H --> I[📊 Actualizar roadmap específico<br/>proyecto/roadmap-v1.md<br/>🔄 → ✅ cambiar estados]
+    
+    I --> J[🔄 Sincronizar proyecto/roadmap.md<br/>Actualizar progreso general]
+    
+    J --> K{🎯 ¿Tarea completada?}
+    
+    K -->|✅ Sí| L[🎉 Commit cambios]
+    K -->|❌ No| G
+    
+    L --> M{🚀 ¿Continuar trabajando?}
+    
+    M -->|✅ Sí| F
+    M -->|❌ No| N[📋 Fin de sesión]
+    
+    %% Estilos
+    classDef startEnd fill:#e1f5fe,stroke:#01579b,stroke-width:3px,color:#01579b
+    classDef process fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#4a148c
+    classDef decision fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef roadmap fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef update fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#f57f17
+    
+    class A,N startEnd
+    class B,C,F,G,L process
+    class D,K,M decision
+    class E1,E2,E3,E4 roadmap
+    class H,I,J update 

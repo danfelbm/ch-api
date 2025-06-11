@@ -1,0 +1,101 @@
+# WordPress Plugin .gitignore
+
+# Composer
+/vendor/
+composer.lock
+
+# Logs
+*.log
+/logs/
+
+# Cache
+/cache/
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# Development files
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.testing
+.env.production
+
+# Build artifacts
+/build/
+/dist/
+/assets/build/
+
+# Test files
+/coverage/
+phpunit.xml
+.phpunit.result.cache
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# WordPress specific
+wp-config-local.php
+.htaccess.bak
+
+# Plugin specific
+/languages/*.mo
+!/languages/*.pot
+
+# Development dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+desktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+
+# Linux
+*~
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# next.js build output
+.next 

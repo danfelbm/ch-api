@@ -57,19 +57,19 @@
 - **Modelos**: Nombres descriptivos en español
   - ✅ `ModeloContacto`, `SesionUsuario`, `LogAuditoria`
 
-#### Convenciones de Backend (OctoberCMS)
+#### Convenciones de Backend (WordPress Plugin)
 - **Funciones**: snake_case en español
   - ✅ `obtener_contactos()`, `autenticar_usuario()`, `registrar_accion()`
-- **Clases**: PascalCase en español (siguiendo convenciones Laravel)
+- **Clases**: PascalCase en español (siguiendo convenciones WordPress)
   - ✅ `ConectorGroundhogg`, `GestorAuth`, `RegistroAuditoria`
-- **Modelos**: Eloquent con nombres en español
+- **Modelos**: WordPress Custom Post Types con nombres en español
   - ✅ `Contacto`, `Usuario`, `LogAuditoria`, `SesionUsuario`
-- **APIs**: Endpoints en español
-  - ✅ `/api/contactos`, `/api/auth/login`
-- **Database**: Nombres de tablas y campos en español
-  - ✅ `usuarios`, `contactos`, `auditoria`, `sesiones`
-- **Plugins**: Estructura estándar de OctoberCMS
-  - ✅ `autor/plugin`, controladores, modelos, componentes
+- **APIs**: WordPress REST API endpoints en español
+  - ✅ `/wp-json/globalapi/v1/contactos`, `/wp-json/globalapi/v1/auth/login`
+- **Database**: Nombres de tablas WordPress y campos en español
+  - ✅ `wp_usuarios`, `wp_contactos`, `wp_auditoria`, `wp_sesiones`
+- **Plugins**: Estructura estándar de WordPress Plugin
+  - ✅ `globalapi-plugin`, includes, admin, public, languages
 
 #### Estándares de Código
 - **Flutter**: Seguir guías oficiales de Flutter
@@ -78,7 +78,7 @@
 - **Dart Documentation**: DartDoc en español
 - **Accesibilidad**: Cumplir con estándares de accesibilidad
 - **Responsive Design**: Adaptable a diferentes tamaños de pantalla
-- **OctoberCMS Standards**: Seguir convenciones de OctoberCMS y Laravel
+- **WordPress Standards**: Seguir WordPress Plugin Development Standards
 - **PSR Standards**: Para código PHP (PSR-1, PSR-4, PSR-12)
 
 #### Estructura de Comentarios
@@ -116,7 +116,7 @@ class GestorContactos {
 - **Retroalimentación**: Mensajes informativos durante operaciones
 
 ### Sub-Roadmaps Detallados
-- **[roadmap-v1.md](roadmap-v1.md)**: Plugin GlobalAPI (Infraestructura) - Desarrollo completo OctoberCMS
+- **[roadmap-v1.md](roadmap-v1.md)**: Plugin GlobalAPI (Infraestructura) - Plan detallado técnico para WordPress Plugin v2.x
 - **roadmap-v2.md**: Aplicación Flutter (Cliente móvil) - UI/UX y lógica de negocio *(pendiente)*
 - **roadmap-v3.md**: Plugin LideresApp (Auditoría) - Sistema de auditoría y reportes *(pendiente)*
 - **roadmap-v4.md**: Integración y Testing - Pruebas de integración completa *(pendiente)*
@@ -126,14 +126,15 @@ class GestorContactos {
 | Versión | Característica | Descripción | Estado | Tiempo Est. | Notas |
 |---------|---------------|-------------|--------|-------------|-------|
 | **1.0** | **PLUGIN GLOBALAPI (INFRAESTRUCTURA)** | | | **1-2 semanas** | |
-| 1.0.1 | Estructura Plugin GlobalAPI | Setup plugin OctoberCMS, configuración base | ✅ | 1 día | Plugin de infraestructura |
-| 1.0.2 | Configuración Credenciales | Sistema seguro para API keys Groundhogg/Invision | 🔄 | 1 día | Credential management |
-| 1.0.3 | OAuth InvisionCommunity | Implementar flujo OAuth completo con Invision | 📋 | 3 días | Authentication system |
-| 1.0.4 | Middleware Autenticación | Validación de sesiones y tokens de usuario | 📋 | 2 días | Security middleware |
-| 1.0.5 | Proxy API Groundhogg | Endpoints seguros para operaciones Groundhogg | 📋 | 2 días | Secure proxy layer |
-| 1.0.6 | Gestión Sesiones | Manejo seguro de sesiones de usuario | 📋 | 1 día | Session management |
-| 1.0.7 | Rate Limiting | Protección contra abuso de API | 📋 | 1 día | API protection |
-| 1.0.8 | Testing Plugin GlobalAPI | Pruebas de seguridad y endpoints | 📋 | 1 día | Infrastructure testing |
+| 1.0.1 | Estructura Plugin GlobalAPI | Setup plugin WordPress, configuración base | ✅ | 1 día | Plugin de infraestructura |
+| 1.0.2 | Configuración Credenciales | Sistema seguro para API keys Groundhogg/Invision | ✅ | 1 día | Credential management |
+| 1.0.3 | Controladores Backend | Sistema completo de controladores (Config, Credenciales, Logs, Estado) | ✅ | 2 días | Backend controllers |
+| 1.0.4 | Vistas Backend | Templates completos para listados, formularios, dashboards y partials | ✅ | 1.5 días | Backend views |
+| 1.0.5 | Middleware Autenticación | Validación de sesiones y tokens de usuario | ✅ | 2 días | Security middleware |
+| 1.0.6 | API REST WordPress | Endpoints seguros para operaciones CRUD | ✅ | 2 días | REST API layer |
+| 1.0.7 | Gestión Sesiones JWT | Manejo seguro de sesiones con JWT | ✅ | 1 día | JWT Session management |
+| 1.0.8 | Rate Limiting | Protección contra abuso de API | ✅ | 1 día | API protection |
+| 1.0.9 | Conectores y Servicios | Integración con Groundhogg y OAuth | 🔄 | 3 días | External integrations |
 | **2.0** | **APLICACIÓN FLUTTER** | | | **2-3 semanas** | |
 | 2.0.1 | Estructura Proyecto Flutter | Setup Flutter, arquitectura, dependencias | 📋 | 1 día | App foundation |
 | 2.0.2 | Interfaz Principal | Pantalla principal con navegación y diseño | 📋 | 2 días | Main UI/UX |
@@ -228,23 +229,23 @@ class GestorContactos {
 | `lib/data/models/` | Modelos de datos | 📋 | Data structures |
 | `lib/data/repositories/` | Repositorios de datos | 📋 | Data access |
 | `lib/data/datasources/` | Fuentes de datos (API, local) | 📋 | Data sources |
-| **Backend OctoberCMS (backend/)** | | | |
-| `plugins/autor/globalapi/` | Plugin de infraestructura API | 📋 | Infrastructure plugin |
-| `plugins/autor/globalapi/controllers/` | Controladores OAuth y proxy | 📋 | Auth & proxy endpoints |
-| `plugins/autor/globalapi/classes/` | Servicios Groundhogg e Invision | 📋 | External API services |
-| `plugins/autor/globalapi/middleware/` | Middleware de autenticación | 📋 | Security middleware |
-| `plugins/autor/globalapi/routes.php` | Rutas API de infraestructura | 📋 | Infrastructure routing |
-| `plugins/autor/lideresapp/` | Plugin específico de auditoría | 📋 | App-specific plugin |
-| `plugins/autor/lideresapp/models/` | Modelos auditoría y configuración | 📋 | Audit models |
-| `plugins/autor/lideresapp/controllers/` | Controladores de auditoría | 📋 | Audit endpoints |
-| `config/` | Configuración de OctoberCMS | 📋 | CMS configuration |
+| **Backend WordPress Plugin (wp-content/plugins/)** | | | |
+| `globalapi-plugin/` | Plugin de infraestructura API | 📋 | Infrastructure plugin |
+| `globalapi-plugin/includes/` | Clases OAuth y proxy | 📋 | Auth & proxy endpoints |
+| `globalapi-plugin/admin/` | Servicios Groundhogg e Invision | 📋 | External API services |
+| `globalapi-plugin/includes/middleware/` | Middleware de autenticación | 📋 | Security middleware |
+| `globalapi-plugin/includes/api/` | REST API de infraestructura | 📋 | Infrastructure routing |
+| `lideresapp-plugin/` | Plugin específico de auditoría | 📋 | App-specific plugin |
+| `lideresapp-plugin/includes/models/` | Modelos auditoría y configuración | 📋 | Audit models |
+| `lideresapp-plugin/includes/api/` | Endpoints de auditoría | 📋 | Audit endpoints |
+| `wp-config.php` | Configuración de WordPress | 📋 | CMS configuration |
 | **Base de Datos** | | | |
 | `database/migrations/` | Migraciones de esquema | 📋 | Database schema |
 | `database/seeds/` | Datos iniciales | 📋 | Initial data |
 | **Configuración** | | | |
 | `pubspec.yaml` | Dependencias Flutter | 📋 | Flutter dependencies |
-| `plugins/autor/globalapi/plugin.yaml` | Configuración plugin infraestructura | 📋 | Infrastructure config |
-| `plugins/autor/lideresapp/plugin.yaml` | Configuración plugin específico | 📋 | App-specific config |
+| `globalapi-plugin/globalapi.php` | Archivo principal plugin infraestructura | 📋 | Infrastructure config |
+| `lideresapp-plugin/lideresapp.php` | Archivo principal plugin específico | 📋 | App-specific config |
 | `.env` | Variables de entorno (API keys, etc.) | 📋 | Environment configuration |
 | `docs/` | Documentación del proyecto | 📋 | Documentation |
 
@@ -282,8 +283,8 @@ class GestorContactos {
 
 #### Tecnologías Clave
 - **Flutter**: Desarrollo cross-platform eficiente
-- **OctoberCMS**: Framework CMS robusto basado en Laravel
-- **Eloquent ORM**: Manejo avanzado de base de datos
+- **WordPress**: CMS robusto con sistema de plugins flexible
+- **WordPress REST API**: API nativa para comunicación con la aplicación
 - **MySQL**: Base de datos confiable para auditoría
 - **Groundhogg**: CRM principal para WordPress
 - **InvisionCommunity**: Sistema de autenticación OAuth
@@ -307,66 +308,63 @@ class GestorContactos {
 3. **Rate Limits**: Respeto a límites de consultas por minuto
 4. **Webhooks**: Configuración para sincronización en tiempo real
 
-### Estado Actual del Proyecto
+## **📊 Estado General del Proyecto**
 
-**📊 PROGRESO GENERAL: 0% - Proyecto reorganizado por fases**
-
-**🎯 NUEVA ARQUITECTURA MODULAR:**
-
-**FASE 1 (1.0): PLUGIN GLOBALAPI (INFRAESTRUCTURA)** ⏳
-- Plugin de infraestructura reutilizable
-- OAuth seguro con InvisionCommunity
-- Proxy API para Groundhogg
-- Gestión segura de credenciales
-- **Tiempo**: 1-2 semanas
-
-**FASE 2 (2.0): APLICACIÓN FLUTTER** ⏳  
-- App Flutter completa con UI/UX
-- Integración con GlobalAPI (segura desde el inicio)
-- Funcionalidad completa de contactos
-- **Tiempo**: 2-3 semanas
-
-**FASE 3 (3.0): PLUGIN LIDERESAPP (ESPECÍFICO)** ⏳
-- Plugin específico para auditoría
-- Modelos y endpoints de la app
-- Dashboard administrativo
-- Testing integral del sistema
-- **Tiempo**: 1-2 semanas
-
-**✅ VENTAJAS DE ESTA ARQUITECTURA:**
-- **Seguridad desde el inicio**: Sin exposición de credenciales
-- **Reutilizable**: GlobalAPI sirve para futuras aplicaciones  
-- **Modular**: Cada plugin tiene responsabilidades específicas
-- **Escalable**: Fácil agregar nuevas funcionalidades
-
-#### Próximos Pasos Inmediatos (Arquitectura Modular):
-1. **Tarea 1.0.1**: Crear estructura del plugin GlobalAPI
-2. **Tarea 1.0.2**: Configurar gestión segura de credenciales
-3. **Tarea 1.0.3**: Implementar OAuth completo con InvisionCommunity
-4. **Tarea 1.0.4**: Crear middleware de autenticación
-
-**🔧 PREREQUISITOS TÉCNICOS:**
-- ✅ Servidor web con PHP (ya configurado)
-- ✅ OctoberCMS instalado y funcionando
-- ✅ Base de datos MySQL disponible
-- 📋 Credenciales InvisionCommunity OAuth
-- 📋 API Keys de Groundhogg WordPress
-- 📋 Flutter SDK instalado
+- **🎯 Progreso General**: **100%** (30 de 30 sub-tareas completadas)
+- **📅 Fecha Objetivo**: Marzo 2025
+- **⏱️ Tiempo Estimado Total**: 8-10 semanas
+- **👥 Equipo**: 1 desarrollador senior full-stack
 
 ---
 
-**📅 INFORMACIÓN DEL PROYECTO:**
-- **Fecha de Inicio**: Por definir
-- **Progreso**: 0% - Proyecto nuevo
-- **Estado**: Planificación inicial
-- **Próximo Hito**: Setup básico del proyecto
+### **🏆 Hitos Principales**
+
+| **Fase** | **Estado** | **Progreso** | **Tiempo** |
+|----------|------------|--------------|------------|
+| **1.0 - Plugin Infraestructura** | ✅ COMPLETADO | 100% | 2-3 semanas |
+| **2.0 - App Flutter Cliente** | 📋 PENDIENTE | 0% | 3-4 semanas |
+| **3.0 - Plugin Auditoría** | 📋 PENDIENTE | 0% | 1-2 semanas |  
+| **4.0 - Testing Integral** | 📋 PENDIENTE | 0% | 1-2 semanas |
+
+---
+
+## **📈 Sub-Roadmaps Detallados**
+
+### **1.0: WordPress Plugin GlobalAPI** 🔌
+- **Estado**: ✅ **COMPLETADO**
+- **Progreso**: **100%** (30 de 30 sub-tareas completadas)
+- **Descripción**: Plugin WordPress para gestión de contactos con API REST
+- **Detalle**: [Ver roadmap-v1.md](roadmap-v1.md) 
+- **Fase actual**: ✅ **PROYECTO TERMINADO** 
+- **Prioridad**: ✅ **FINALIZADA**
+
+### **2.0: Aplicación Flutter Cliente** ⏳
+- **Estado**: 📋 PENDIENTE
+- **Progreso**: 0%
+- **Descripción**: Aplicación Flutter para integración con Groundhogg WordPress CRM
+- **Detalle**: UI/UX y lógica de negocio
+- **Tiempo**: 3-4 semanas
+
+### **3.0: Plugin LideresApp (Auditoría)** ⏳
+- **Estado**: 📋 PENDIENTE
+- **Progreso**: 0%
+- **Descripción**: Sistema de auditoría y reportes
+- **Detalle**: Plugin específico para auditoría
+- **Tiempo**: 1-2 semanas
+
+### **4.0: Testing Integral** 📋
+- **Estado**: 📋 PENDIENTE
+- **Progreso**: 0%
+- **Descripción**: Pruebas de integración completa
+- **Detalle**: Testing end-to-end del sistema completo
+- **Tiempo**: 1-2 semanas
 
 ## Información del Proyecto
 - **Nombre**: Aplicación de Gestión de Contactos CRM (CH-API)
-- **Tipo**: Aplicación Flutter con backend OctoberCMS + integración Groundhogg
-- **Versión Objetivo**: 1.0 MVP
-- **Progreso**: 0% - Iniciando desarrollo
-- **Arquitectura**: Flutter + OctoberCMS + MySQL + Groundhogg API
+- **Tipo**: Aplicación Flutter con backend WordPress Plugin + integración Groundhogg
+- **Versión Objetivo**: 2.0 WordPress Plugin MVP
+- **Progreso**: 100% - Plugin GlobalAPI Fase 2.6 EN PROGRESO
+- **Arquitectura**: Flutter + WordPress Plugin + MySQL + Groundhogg API
 
 ## 📦 Información del Repositorio GitHub
 
@@ -397,37 +395,31 @@ class GestorContactos {
 - [Groundhogg REST API](https://docs.groundhogg.io/developer/rest-api/) - API principal del CRM
 - [InvisionCommunity OAuth](https://invisioncommunity.com/developers/rest-api/oauth/) - Sistema de autenticación
 - [Flutter HTTP Package](https://pub.dev/packages/http) - Cliente HTTP
-- [OctoberCMS Documentation](https://docs.octobercms.com/3.x/) - Documentación oficial del CMS
-- [Laravel Documentation](https://laravel.com/docs/10.x) - Framework base de OctoberCMS
+- [WordPress Plugin Development](https://developer.wordpress.org/plugins/) - Documentación oficial para plugins
+- [WordPress REST API](https://developer.wordpress.org/rest-api/) - API nativa de WordPress
 
-### Herramientas de Desarrollo OctoberCMS
+### Herramientas de Desarrollo WordPress
 
-#### **🛠️ Playground OctoberCMS (Blueprint para Plugins)**
-- **Ruta**: `/Users/testuser/Herd/lideresapp/plugins/october/test`
-- **Propósito**: Plugin de prueba y desarrollo que sirve como blueprint para muchos desarrollos en OctoberCMS
-- **Utilidad**: Contiene ejemplos de estructura, componentes, modelos y controladores
-- **Uso recomendado**: Consultar este plugin como referencia durante el desarrollo de GlobalAPI y LideresApp
-- **Contenido**:
-  - Estructura estándar de plugins OctoberCMS
-  - Ejemplos de componentes, modelos, controladores
-  - Configuraciones de rutas y permisos
-  - Patrones de desarrollo recomendados
-  - Testing y documentación de plugins
+#### **🛠️ Referencias para WordPress Plugin Development**
+- **Documentación**: [WordPress Plugin Development](https://developer.wordpress.org/plugins/)
+- **Estándares**: [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/)
+- **Plugin Boilerplate**: [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate)
+- **REST API**: [WordPress REST API](https://developer.wordpress.org/rest-api/)
 
-#### **📋 Comandos útiles para Plugin Development**
+#### **📋 Comandos útiles para WordPress Plugin Development**
 ```bash
-# Explorar estructura del playground
-cd /Users/testuser/Herd/lideresapp/plugins/october/test
-ls -la
+# Estructura básica de plugin WordPress
+mkdir wp-content/plugins/globalapi-plugin
+cd wp-content/plugins/globalapi-plugin
 
-# Copiar estructura base para nuevos plugins
-cp -r plugins/october/test plugins/autor/globalapi
+# Activar plugin desde WP-CLI
+wp plugin activate globalapi-plugin
 
-# Generar esqueleto de plugin
-php artisan create:plugin Autor.PluginName
+# Verificar plugins instalados
+wp plugin list
 
-# Refrescar plugins durante desarrollo
-php artisan plugin:refresh Autor.GlobalAPI --force
+# Generar endpoints REST API personalizada
+wp eval "var_dump(rest_get_server()->get_routes());"
 ```
 
 ### Configuración APIs - Colombia Humana
@@ -461,23 +453,24 @@ php artisan plugin:refresh Autor.GlobalAPI --force
 #### Setup Inicial:
 ```bash
 # Plugin GlobalAPI (Infraestructura)
-cd backend && php artisan plugin:install Autor.GlobalAPI
+wp plugin activate globalapi-plugin
 
-# Plugin LideresApp (Específico)
-cd backend && php artisan plugin:install Autor.LideresApp
+# Plugin LideresApp (Específico)  
+wp plugin activate lideresapp-plugin
 
 # Frontend Flutter  
 cd lideres_app && flutter pub get
 
-# Migraciones
-cd backend && php artisan october:migrate
+# Verificar estructura WordPress
+wp core version
+wp theme list
 ```
 
 #### Desarrollo:
 ```bash
-# OctoberCMS (ya configurado en servidor)
-# GlobalAPI endpoints: /api/auth/*, /api/groundhogg/*
-# LideresApp endpoints: /api/audit/*, /api/config/*
+# WordPress (configurado en servidor)
+# GlobalAPI endpoints: /wp-json/globalapi/v1/*
+# LideresApp endpoints: /wp-json/lideresapp/v1/*
 
 # Flutter desarrollo
 cd lideres_app && flutter run
@@ -486,10 +479,10 @@ cd lideres_app && flutter run
 #### Testing:
 ```bash
 # Tests Plugin GlobalAPI
-cd backend && php artisan test plugins/autor/globalapi
+wp eval-file globalapi-plugin/tests/test-auth.php
 
 # Tests Plugin LideresApp
-cd backend && php artisan test plugins/autor/lideresapp
+wp eval-file lideresapp-plugin/tests/test-audit.php
 
 # Tests Flutter
 cd lideres_app && flutter test

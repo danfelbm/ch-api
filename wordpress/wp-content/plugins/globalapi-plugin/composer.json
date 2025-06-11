@@ -1,0 +1,66 @@
+{
+    "name": "colombiahumana/globalapi-plugin",
+    "description": "Plugin de infraestructura para integración CRM Colombia Humana con Groundhogg y Invision",
+    "type": "wordpress-plugin",
+    "version": "2.0.0",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Colombia Humana",
+            "email": "desarrollo@colombiahumana.org",
+            "role": "Desarrollador"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "wp-cli/wp-cli": "^2.11",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlobalAPI\\": "includes/",
+            "GlobalAPI\\Models\\": "includes/models/",
+            "GlobalAPI\\API\\": "includes/api/",
+            "GlobalAPI\\Services\\": "includes/services/",
+            "GlobalAPI\\Security\\": "includes/security/",
+            "GlobalAPI\\Admin\\": "admin/",
+            "GlobalAPI\\Public\\": "public/",
+            "GlobalAPI\\Tests\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GlobalAPI\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpcs": "phpcs --standard=WordPress --extensions=php .",
+        "phpcbf": "phpcbf --standard=WordPress --extensions=php .",
+        "install-dev": "composer install --dev",
+        "install-prod": "composer install --no-dev --optimize-autoloader"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.1"
+        }
+    },
+    "extra": {
+        "wordpress-plugin": {
+            "name": "GlobalAPI - Infraestructura CRM",
+            "description": "Plugin de infraestructura para gestión de conexiones API con Groundhogg y sistema de auditoría",
+            "main-file": "globalapi.php",
+            "text-domain": "globalapi",
+            "domain-path": "/languages"
+        }
+    }
+} 

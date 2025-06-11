@@ -1,0 +1,59 @@
+.endpoint-form-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.endpoint-list-container {
+    margin-top: 30px;
+}
+
+.role-tag {
+    background: #0073aa;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.endpoint-form-container h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.endpoint-list-container table th {
+    background: #f9f9f9;
+}
+
+.endpoint-list-container table code {
+    background: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.delete-endpoint {
+    background: #dc3232 !important;
+    border-color: #dc3232 !important;
+    color: #fff !important;
+}
+
+.delete-endpoint:hover {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+.form-table th {
+    width: 200px;
+}
+
+.endpoint-form-container .description {
+    font-style: italic;
+    color: #666;
+} 
